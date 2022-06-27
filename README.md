@@ -11,4 +11,10 @@
 
 - Typescript checks our code before compiling it to JS code
 - If there is any type error or possibility for runtime error, it will not compile
--
+
+## 2.1 Implicit Types vs Explicit Types
+
+- We can either implicitly or explicitly type in TS
+- If we write regular JS code like `let a = "hello"; a = "bye"`, TS will implicitly understand that a is a string
+- To explictly type a data, we use `:` like `let b : boolean = false`
+- To type an array of numbers, `let c : number[] = []`
