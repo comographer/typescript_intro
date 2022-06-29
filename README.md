@@ -104,3 +104,42 @@ function playerMaker(name: string): Player {
 ```ts
 const playerMaker = (name: string): Player => ({ name });
 ```
+
+## 2.3 Types of TS part Two
+
+### readonly
+
+- You can set a data as readonly and it will be unchangeable
+
+```ts
+type Player = {
+  readonly name: string;
+  age?: number;
+};
+
+const numbers: readonly number[] = [1, 2, 3, 4];
+
+const names: readonly string[] = ["1", "2"];
+```
+
+- Keep in mind that this protection only works while you are in TS
+
+### Tuple
+
+- Tuple allows you to create an array with minimum length and specified data types
+
+```ts
+const player: [string, number, boolean] = ["como", 1, true];
+```
+
+### Others
+
+- TS also have `undefined` and `null` from JS
+
+```ts
+let a: undefined = undefined;
+let b: null = null;
+```
+
+- When you use `any`, you are basically escaping the TS land
+- Using `any` will not provide you the protection that TS offers but sometimes it is needed
