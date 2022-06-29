@@ -203,3 +203,18 @@ function hello(name: string | number) {
 ```
 
 - By the way, is TS typing, `|` is `or` and `&` is `and`
+
+## 3.0 Call Signatures
+
+- Call signature is the type of arguments and return value of a function
+- We can make preset for the arguments and return value types and reuse it
+
+```ts
+// Create call signature
+type Add = (a: number, b: number) => number;
+
+// Add call signature after function name
+const add: Add = (a, b) => a + b;
+```
+
+- Making call signatures helps you think about the types beforehand and also make them reusable
