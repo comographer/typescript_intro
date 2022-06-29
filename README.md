@@ -218,3 +218,51 @@ const add: Add = (a, b) => a + b;
 ```
 
 - Making call signatures helps you think about the types beforehand and also make them reusable
+
+## 3.1 Overloading
+
+- Overloading is when a function has multiple different call signatures
+
+```ts
+type Add = {
+  (a: number, b: number): number;
+  (a: number, b: string): number;
+};
+
+const add: Add = (a, b) => {
+  if (typeof b === "string") return a;
+  return a + b;
+};
+
+type Config = {
+  path: string;
+  state: object;
+};
+
+type Push = {
+  (path: string): void;
+  (config: Config): void;
+};
+
+const push: Push = (config) => {
+  if (typeof config === "string") {
+    console.log(config);
+  } else {
+    console.log(config.path);
+  }
+};
+```
+
+- When there are difference in number of arguments among the call signatures, we need to clarify the unused argument as optional
+
+```ts
+type Add = {
+  (a: number, b: number): number;
+  (a: number, b: number, c: number): number;
+};
+
+const add: Add = (a, b, c?: number) => {
+  if (c) return a + b + c;
+  return a + b;
+};
+```
