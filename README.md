@@ -277,9 +277,7 @@ const add: Add = (a, b, c?: number) => {
 - It is written in front of the type and often written as `<T>`
 
 ```ts
-type SuperPrint = {
-  <T>(arr: T[]): T;
-};
+type SuperPrint = <T>(arr: T[]) => T;
 
 const superPrint: SuperPrint = (arr) => arr[0];
 
@@ -291,4 +289,14 @@ const b = superPrint([true, false, true]);
 const c = superPrint(["a", "b", "c"]);
 // T = string | number | boolean
 const d = superPrint(["a", 1, true]);
+```
+
+## 3.3 Generics Recap
+
+- By using generics, we let TS guess and create the call signature
+- It is similar to using any but it still provides us the protection of TS
+- You can also add multiple generics
+
+```ts
+type SuperPrint = <T, V>(a: T[], b: M) => T;
 ```
