@@ -143,3 +143,63 @@ let b: null = null;
 
 - When you use `any`, you are basically escaping the TS land
 - Using `any` will not provide you the protection that TS offers but sometimes it is needed
+
+## 2.4 Types of TS part Three
+
+### unknown
+
+- The whole point of using TS is to explain the types to TS to help us making mistakes
+- In case we don't know the type, we can use `unknown`
+- When we use `unknown` we will need to use conditional for extra protection
+
+```ts
+let a: unknown;
+
+if (typeof a === "number") {
+  let b = a + 1;
+}
+
+if (typeof a === "string") {
+  let b = a.toUpperCase();
+}
+```
+
+### void
+
+- `void` is for functions that doesn't return anything
+- If a function is not returning anything, it will automatically be typed as `void`
+
+```ts
+const hello = () => console.log("x");
+
+const a = hello();
+// Below will not work since function hello() is void
+a.toUpperCase();
+```
+
+### never
+
+- `never` happens when a function never returns like a function that throws exception
+
+```ts
+function hello(): never {
+  throw new Error("error");
+}
+```
+
+- It also happens when an argument can be of two types
+
+```ts
+function hello(name: string | number) {
+  if (typeof name === "string") {
+    name;
+  } else if (typeof name === "number") {
+    name;
+  } else {
+    // below will be type "never"
+    name;
+  }
+}
+```
+
+- By the way, is TS typing, `|` is `or` and `&` is `and`
