@@ -266,3 +266,29 @@ const add: Add = (a, b, c?: number) => {
   return a + b;
 };
 ```
+
+## 3.2 Polymorphism
+
+- Polymorphism basically means multi shape
+- Types such as number, string, boolean are concrete types that we are sure what they are
+- Generic types are are types that can be implictly figured by TS
+- Generic is like a placeholder for types
+- If we don't know the type in advance, we use generic as placeholder
+- It is written in front of the type and often written as `<T>`
+
+```ts
+type SuperPrint = {
+  <T>(arr: T[]): T;
+};
+
+const superPrint: SuperPrint = (arr) => arr[0];
+
+// T = number
+const a = superPrint([1, 3, 4, 5]);
+// T = boolean
+const b = superPrint([true, false, true]);
+// T = string
+const c = superPrint(["a", "b", "c"]);
+// T = string | number | boolean
+const d = superPrint(["a", 1, true]);
+```
