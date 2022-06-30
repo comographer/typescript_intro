@@ -300,3 +300,42 @@ const d = superPrint(["a", 1, true]);
 ```ts
 type SuperPrint = <T, V>(a: T[], b: M) => T;
 ```
+
+## 3.4 Conclusions
+
+```ts
+function superPrint<V>(a: V[]) {
+  return a[0];
+}
+```
+
+```ts
+type Player<E> = {
+  name: string;
+  extraInfo: E;
+};
+
+type NicoExtra = {
+  favFood: string;
+};
+
+type NicoPlayer = Player<NicoExtra>;
+
+const nico: NicoPlayer = {
+  name: "nico",
+  extraInfo: {
+    favFood: "kimchi",
+  },
+};
+
+const lynn: Player<null> = {
+  name: "lynn",
+  extraInfo: null,
+};
+```
+
+```ts
+type a = Array<number>;
+
+let a: A = [1, 2, 3, 4];
+```
