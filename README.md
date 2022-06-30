@@ -335,7 +335,46 @@ const lynn: Player<null> = {
 ```
 
 ```ts
-type a = Array<number>;
+type A = Array<number>;
 
 let a: A = [1, 2, 3, 4];
 ```
+
+## 4.0 Classes
+
+### Object Oriented Programming
+
+- We often code multiple objects with same properties
+- In order to create the blueprint for these objects which can be reused and easy to mutate, we use Class
+- Class is basically the cookie cutter or blueprint for repeating objects
+
+### Class in TS
+
+```ts
+abstract class User {
+  // constructor
+  constructor(
+    private firstsName: string,
+    public lastName: string,
+    protected nickname: string
+  );
+  // abstarct method
+  abstract getNickName(): void;
+  // method
+  private getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+class Player extends User {
+  getNickName() {
+    console.log(this.nickname);
+  }
+}
+
+const como = new Player("como", "kim", "꼬모");
+```
+
+- Abstract classes are classes that other classes can inherit from but cannot have instance of its own directly
+- Abstract method only takes call signatrue and it should be implemented by all inherited classes
+- Properties can be either private, public or protected
