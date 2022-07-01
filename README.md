@@ -378,3 +378,43 @@ const como = new Player("como", "kim", "꼬모");
 - Abstract classes are classes that other classes can inherit from but cannot have instance of its own directly
 - Abstract method only takes call signatrue and it should be implemented by all inherited classes
 - Properties can be either private, public or protected
+
+## 4.1 Recap
+
+- When creating classes in TS, in constructor, we just need to specify protection level, name the property, and specify type
+- Abstract classes cannot create instances of its own but can be used for extend
+
+```ts
+type Words = {
+  // [key:string] here means there can be unlimited amount of items
+  [key: string]: string;
+};
+
+class Dict {
+  // class property can be manually initialized
+  private words: Words;
+  constructor() {
+    this.words = {};
+  }
+  // Class can be used as a type(Word)
+  add(word: Word) {
+    if (this.words[word.term] === undefined) {
+      this.words[word.term] = word.def;
+    }
+  }
+  def(term: string) {
+    return this.words[term];
+  }
+}
+
+class Word {
+  constructor(public term: string, public def: string) {}
+}
+
+const kimchi = new Word("kimchi", "한국의 음식");
+
+const dict = new Dict();
+
+dict.add(kimchi);
+dict.def("kimchi");
+```
