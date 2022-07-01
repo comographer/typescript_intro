@@ -408,7 +408,7 @@ class Dict {
 }
 
 class Word {
-  constructor(public term: string, public def: string) {}
+  constructor(public readonly term: string, public readonly def: string) {}
 }
 
 const kimchi = new Word("kimchi", "한국의 음식");
@@ -417,4 +417,45 @@ const dict = new Dict();
 
 dict.add(kimchi);
 dict.def("kimchi");
+```
+
+## 4.2 Interfaces
+
+- You can also constraint values using type
+
+```ts
+type Team = "red" | "blue" | "yellow";
+type Health = 1 | 5 | 10;
+
+type Player = {
+  nickname: string;
+  team: Team;
+  health: Health;
+};
+
+const como: Player = {
+  nickname: "como",
+  // can only choose from Team
+  team: "yellow",
+  // can only choose from Health
+  health: 5,
+};
+```
+
+- Another way to experience shape of data is using interface
+- Interface is used to shape an object
+- `type` is more versatile than `interface` since `interface` only used for shaping object
+- However, `interface` is much easier to extend from
+- `interface` is also accumulative that even if you create multiple `interface`s with same name, they will act as one
+
+```ts
+interface User {
+  readonly name: string;
+}
+
+interface Player extends User {}
+
+const como: Player = {
+  name: "como",
+};
 ```
