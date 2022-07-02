@@ -459,3 +459,56 @@ const como: Player = {
   name: "como",
 };
 ```
+
+## 4.3 Interfaces part Two
+
+```ts
+abstract class User {
+  constructor(protected firstName: string, protected lastName: string) {}
+  abstract sayHi(name: string): string;
+  abstract fullName(): string;
+}
+
+class Player extends User {
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  sayHi(name: string) {
+    return `Hello ${name}. My name is ${this.fullName()}`;
+  }
+}
+```
+
+- In above, `abstract class User` will end up in JS when compiled as normal `class`
+- In order to make it disappear, we could replace it with an interface
+- Below will make your JS code much more light while accomplishing the same as above
+- The only drawback is that the properties must be public
+
+```ts
+interface User {
+  firstName: string;
+  lastName: string;
+  sayHi(name: string): string;
+  fullName(): string;
+}
+
+interface Human {
+  health: number;
+}
+
+class Player implements User {
+  constructor(
+    public firstName: string,
+    public lastName: string,
+    public health: number
+  ) {}
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  sayHi(name: string) {
+    return `Hello ${name}. My name is ${this.fullName()}`;
+  }
+}
+```
+
+- Interface can also be used as a type
