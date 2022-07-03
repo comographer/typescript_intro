@@ -1,0 +1,22 @@
+{
+  "name": "typescript_intro",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comographer/typescript_intro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/comographer/typescript_intro/issues"
+  },
+  "homepage": "https://github.com/comographer/typescript_intro#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
