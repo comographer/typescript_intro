@@ -512,3 +512,47 @@ class Player implements User {
 ```
 
 - Interface can also be used as a type
+
+## 4.4 Recap
+
+- To declare type, we can use either `type` or `interface`
+
+```ts
+type PlayerA = {
+  name: string;
+};
+// How to extend `type`
+type PlayerAA = PlayerA & {
+  lastName: string;
+};
+const playerA: PlayerAA = {
+  name: "como",
+  lastName: "kim",
+};
+/////
+interface PlayerB {
+  name: string;
+}
+// How to extend `interface`
+interface PlayerB {
+  lastName: string;
+}
+const playerB: PlayerB = {
+  name: "como",
+  lastName: "kim",
+};
+```
+
+- Both types created by either by `type` or `interface` can be later implemented to a `class`
+
+```ts
+type PlayerA = {
+  firstName: string;
+};
+interface PlayerB {
+  firstName: string;
+}
+class User implements PlayerB {
+  constructor(public firstName: string) {}
+}
+```
