@@ -4,7 +4,7 @@
 - Usually we will be using libraries that will configure that for us
 - When we do need to set it up, do as below.
 
-```cli
+```jsx
 npm init
 npm i -D typescript
 touch tsconfig.json
@@ -34,4 +34,15 @@ touch tsconfig.json
 
 ```cli
 npm run build
+```
+
+## 5.2 Lib Configuration
+
+- Lib configuration is configuring on which environment your code will be running
+- If you set as below, TS will understand that this code will run on ES6 and browser
+
+```json
+{
+  "lib": ["ES6", "DOM"]
+}
 ```
