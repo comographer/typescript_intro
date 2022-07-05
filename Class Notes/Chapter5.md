@@ -46,3 +46,10 @@ npm run build
   "lib": ["ES6", "DOM"]
 }
 ```
+
+## 5.3 Declaration Files
+
+- Because JS libraries are built for JS, when using them in TS, we need to explain to TS what is the shape of those libraries
+- Most of the time, we will be using packages and libraries built for JS so this process is essential
+- File that explaines to TS all the types for certain API is called a declaration file that uses extension `.d.ts`
+- In `.d.ts` files, we can only write the call signatures
