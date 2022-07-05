@@ -92,3 +92,8 @@ export function exit(code) {
   return code + 1;
 }
 ```
+
+## 5.5 Blocks
+
+- In order to work more efficiently, we can use npm package `ts-node`
+- `ts-node` helps you to run TS without build during development

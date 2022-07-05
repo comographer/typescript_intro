@@ -8,8 +8,9 @@
     // javascript will be compiled to "ES6"
     "target": "ES6",
     // "lib" menas the environment that your code will be running and "DOM" means browser
-    "lib": ["ES6", "DOM"],
+    "lib": ["ES6"],
     "strict": true,
-    "allowJs": true
+    "esModuleInterop": true,
+    "module": "CommonJS"
   }
 }
