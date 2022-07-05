@@ -9,6 +9,7 @@
     "target": "ES6",
     // "lib" menas the environment that your code will be running and "DOM" means browser
     "lib": ["ES6", "DOM"],
-    "strict": true
+    "strict": true,
+    "allowJs": true
   }
 }

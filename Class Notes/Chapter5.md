@@ -53,3 +53,42 @@ npm run build
 - Most of the time, we will be using packages and libraries built for JS so this process is essential
 - File that explaines to TS all the types for certain API is called a declaration file that uses extension `.d.ts`
 - In `.d.ts` files, we can only write the call signatures
+- This really shows that everything in TS should be typed
+
+## 5.4 JSDoc
+
+- In case you don't want to create a declaration file, you can also add to `tsconfig.json` below line
+
+```json
+"allowJs": true
+```
+
+- This will enable TS to guess the types instead of reading them from a declaration file
+
+- In case you want TS protection on JS files, we can also do that
+- You add `// @ts-check` on top and below, use comments like below
+
+```js
+// @ts-check
+/**
+ * Intializes the project
+ * @param {object} config
+ * @param {boolean} config.debug
+ * @param {string} config.url
+ * @returns {boolean}
+ */
+
+export function init(config) {
+  return true;
+}
+
+/**
+ * Exits the program
+ * @param {number} code
+ * @returns {number}
+ */
+
+export function exit(code) {
+  return code + 1;
+}
+```
