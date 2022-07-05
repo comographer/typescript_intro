@@ -97,3 +97,7 @@ export function exit(code) {
 
 - In order to work more efficiently, we can use npm package `ts-node`
 - `ts-node` helps you to run TS without build during development
+
+## 5.6 DefinitelyTyped
+
+- When
