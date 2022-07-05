@@ -100,4 +100,5 @@ export function exit(code) {
 
 ## 5.6 DefinitelyTyped
 
-- When
+- When we need types for a library or a package, we cannot create `.d.ts` file everytime
+- Place to find them is the Github repo named `DefinitelyTyped`
